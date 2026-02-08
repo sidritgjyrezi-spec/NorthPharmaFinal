@@ -1,362 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about North Aesthetic's mission, values, and commitment to quality products and customer satisfaction since 2020.">
-    <meta name="keywords" content="north aesthetic about, company story, mission values">
-    <title>About Us - North Aesthetic</title>
-    <style>
-        /* ========== RESET ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Discover premium aesthetic products at North Aesthetic. High-quality skincare, wellness, and lifestyle items designed for modern living."/>
+  <meta name="keywords" content="north aesthetic, premium skincare, aesthetic products, exosomes, hair growth, luxury wellness, firming"/>
+  <title>North Aesthetic – Premium Aesthetic Products</title>
 
-        /* ========== BASE STYLES ========== */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-        /* ========== NAVIGATION ========== */
-        nav {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease-in-out;
-        }
+  <style>
+      :root {
+          --primary: #667eea;
+          --primary-dark: #5a6ee1;
+          --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          --text: #1f2937;
+          --light: #f8fafc;
+          --gray: #6b7280;
+          --dark: #111827;
+      }
 
-        nav.hidden { transform: translateY(-100%); }
-        nav.visible { transform: translateY(0); }
+      * { margin:0; padding:0; box-sizing:border-box; }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      html { scroll-behavior: smooth; }
 
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            position: relative;
-        }
+      body {
+          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+          line-height: 1.6;
+          color: var(--text);
+          background: var(--light);
+      }
 
-        .logo-img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            position: relative;
-            top: 8px;
-        }
+      nav {
+          background: var(--gradient);
+          padding: 1.1rem 0;
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          width: 100%;
+          z-index: 1000;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+          transition: transform 0.4s ease;
+      }
 
-        .nav-links {
-            position: fixed;
-            right: -100%;
-            top: 70px;
-            flex-direction: column;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            width: 100%;
-            padding: 2rem;
-            gap: 1rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: right 0.3s ease;
-            z-index: 999;
-            max-height: calc(100vh - 70px);
-            overflow-y: auto;
-        }
+      nav.hidden { transform: translateY(-110%); }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: opacity 0.3s ease;
-        }
+      .nav-container {
+          max-width: 1480px;
+          margin: 0 auto;
+          padding: 0 5%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
 
-        .nav-links a:hover { opacity: 0.7; }
+      .logo {
+          display: flex;
+          align-items: center;
+          gap: 0.9rem;
+          color: white;
+          font-family: 'Playfair Display', serif;
+          font-size: 1.7rem;
+          font-weight: 700;
+          text-decoration: none;
+      }
 
-        /* ========== HAMBURGER MENU ========== */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
+      .logo-img {
+          width: 64px; height: 64px;
+          object-fit: contain;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      }
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
+      .nav-links {
+          display: flex;
+          gap: 2.6rem;
+          list-style: none;
+      }
 
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+      .nav-links a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+          transition: all 0.25s;
+          position: relative;
+      }
 
-        /* ========== HERO SECTION ========== */
-        .hero {
-            margin-top: 70px;
-            padding: 4rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
+      .nav-links a::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: -6px;
+          left: 0;
+          background: white;
+          transition: width 0.3s ease;
+      }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+      .nav-links a:hover::after,
+      .nav-links a.active::after { width: 100%; }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+      .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 6px;
+          cursor: pointer;
+          z-index: 1100;
+      }
 
-        /* ========== MAIN CONTENT ========== */
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
+      .hamburger span {
+          width: 30px; height: 3.5px;
+          background: white;
+          border-radius: 3px;
+          transition: all 0.35s;
+      }
 
-        .about-content {
-            background: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
+      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+      .hamburger.active span:nth-child(2) { opacity: 0; }
+      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -9px); }
 
-        .about-content h2 {
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
+      /* ── Sections ── */
+      section {
+          padding: 8rem 5%;
+          max-width: 1480px;
+          margin: 0 auto;
+          text-align: center;
+      }
 
-        .about-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
+      section:first-of-type {
+          padding-top: 12rem;
+      }
 
-        /* ========== FOOTER ========== */
-        footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem 2rem 1.5rem;
-            margin-top: 4rem;
-        }
+      section h2 {
+          font-family: 'Playfair Display', serif;
+          font-size: 3.2rem;
+          color: var(--primary);
+          margin-bottom: 1.6rem;
+      }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+      section p.lead {
+          font-size: 1.35rem;
+          color: var(--gray);
+          max-width: 760px;
+          margin: 0 auto 3rem;
+          line-height: 1.8;
+      }
 
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
+      section p.lead strong {
+          color: var(--primary);
+          font-weight: 600;
+      }
 
-        .footer-section p {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
+      footer {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 6rem 5% 3rem;
+      }
 
-        .footer-section a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
+      .footer-container {
+          max-width: 1480px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 3.5rem;
+      }
 
-        .footer-section a:hover { opacity: 0.7; }
-        .footer-icon { margin-right: 0.5rem; }
+      .footer-section h3 {
+          font-size: 1.5rem;
+          margin-bottom: 1.4rem;
+      }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+      .footer-section a {
+          color: white;
+          text-decoration: none;
+          opacity: 0.92;
+          transition: opacity 0.25s;
+      }
 
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: background 0.3s ease;
-        }
+      .footer-section a:hover {
+          opacity: 1;
+          /* no underline – matches your current About style */
+      }
 
-        .social-links a:hover { background: rgba(255, 255, 255, 0.3); }
+      .social-links {
+          display: flex;
+          gap: 1.2rem;
+          margin-top: 1.2rem;
+      }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.9rem;
-        }
+      .social-links a {
+          width: 48px;
+          height: 48px;
+          background: rgba(255,255,255,0.18);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s;
+      }
 
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
+      .social-links a:hover {
+          background: rgba(255,255,255,0.38);
+          transform: translateY(-3px);
+      }
 
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                width: 100%;
-                padding: 2rem;
-                gap: 1rem;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-                transition: right 0.3s ease;
-            }
+      .footer-bottom {
+          text-align: center;
+          margin-top: 4rem;
+          padding-top: 2.5rem;
+          border-top: 1px solid rgba(255,255,255,0.18);
+          font-size: 0.98rem;
+          opacity: 0.9;
+      }
 
-            .nav-links.active { right: 0; }
-            .hero h1 { font-size: 2rem; }
-            .about-content { padding: 2rem; }
-            .footer-container { grid-template-columns: 1fr; gap: 1.5rem; }
-        }
-    </style>
+      @media (max-width: 840px) {
+          .hamburger { display: flex; }
+          .nav-links {
+              position: fixed; inset: 76px 0 0;
+              background: var(--gradient);
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              transform: translateX(100%);
+              transition: transform 0.45s cubic-bezier(0.77,0,0.18,1);
+              z-index: 999;
+          }
+          .nav-links.active { transform: translateX(0); }
+          .hero { min-height: 85vh; }
+          section { padding: 6rem 5%; }
+      }
+
+      @media (max-width: 480px) {
+          .hero h1 { font-size: 2.8rem; }
+          .hero p { font-size: 1.2rem; }
+          .btn-primary { padding: 0.9rem 2rem; font-size: 1rem; }
+      }
+
+      .premium-cta {
+          display: inline-block;
+          padding: 1rem 2.8rem;
+          font-size: 1.18rem;
+          font-weight: 700;
+          color: white;
+          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          border-radius: 9999px;
+          text-decoration: none;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          margin-top: 1.6rem;
+      }
+
+      .premium-cta::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, #a78bfa, #c084fc, #f472b6);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          z-index: -1;
+      }
+
+      .premium-cta:hover::before {
+          opacity: 1;
+      }
+
+      .premium-cta:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.5);
+          letter-spacing: 0.5px;
+      }
+  </style>
 </head>
 <body>
-<!-- Navigation -->
-<nav class="visible">
-    <div class="nav-container">
-        <a href="index.html" class="logo">
-            <img src="Aesthetic.jpg" alt="North Aesthetic Logo" class="logo-img" loading="lazy" width="70" height="70">
-            <span>North Aesthetic</span>
-        </a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Products.html">Products</a></li>
-            <li><a href="Feedback.html">Feedback</a></li>
-            <li><a href="About.html">About Us</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+
+<nav id="mainNav">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="Aesthetic.jpg" alt="North Aesthetic logo – premium aesthetic products" class="logo-img" loading="lazy"/>
+      North Aesthetic
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="Feedback.html">Feedback</a></li>
+      <li><a href="About.html">About Us</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="hero">
-    <h1>About North Aesthetic</h1>
-    <p>Learn more about our mission, values, and the team behind our success</p>
-</div>
+<!-- Hero section removed -->
 
-<!-- Main Content -->
-<div class="container">
-    <div class="about-content">
-        <h2>Our Story</h2>
-        <p>Founded in 2020, North Aesthetic started with a simple mission: to bring quality products to customers who value excellence and innovation. What began as a small startup has grown into a trusted name in the industry, serving thousands of satisfied customers worldwide.</p>
-        <p>We believe that shopping should be more than just a transaction. It should be an experience that delights, inspires, and meets your highest expectations. That's why we carefully curate every product in our collection, ensuring it meets our rigorous standards for quality, design, and value.</p>
-        <p>Our commitment to customer satisfaction drives everything we do. From the moment you browse our catalog to the day your product arrives at your door, we're dedicated to making your experience exceptional.</p>
-    </div>
-</div>
+<section id="about-intro">
+  <h2>About North Aesthetic</h2>
+  <p class="lead">North Aesthetic is Albania's premier destination for advanced aesthetic medicine and luxury wellness products. We bring together cutting-edge science and premium quality to deliver exceptional results.</p>
+</section>
 
-<!-- Footer -->
+<section id="our-story" style="background:#f8f9fa;">
+  <h2>Our Story</h2>
+  <p class="lead">Founded with a vision to revolutionize the aesthetic industry in Albania, North Aesthetic combines international expertise with local excellence. We carefully curate every product in our portfolio, ensuring only the highest quality solutions reach our discerning clientele.</p>
+</section>
+
+<section id="our-mission">
+  <h2>Our Mission</h2>
+  <p class="lead">To empower individuals with scientifically advanced, safe, and effective aesthetic solutions that enhance natural beauty and boost confidence. We believe in transparency, quality, and results that speak for themselves.</p>
+</section>
+
+<section id="what-we-offer" style="background:#f8f9fa;">
+  <h2>What We Offer</h2>
+  <p class="lead">
+    <strong>Premium Skin Boosters</strong> – Advanced formulations with HA, PDRN, and PN for deep skin rejuvenation<br><br>
+    <strong>Biostimulators</strong> – CaHA and PLLA-based solutions for natural volume restoration and collagen stimulation<br><br>
+    <strong>Dermal Fillers</strong> – ZEEP technology fillers with ultra-low endotoxin for safe, natural results<br><br>
+    <strong>Exosome Therapy</strong> – Revolutionary ExoVair products for skin and scalp regeneration<br><br>
+    <strong>Professional Support</strong> – Expert guidance and authentic products from trusted manufacturers
+  </p>
+</section>
+
+<section id="why-choose-us">
+  <h2>Why Choose North Aesthetic?</h2>
+  <p class="lead">
+    ✓ Authentic products from certified manufacturers<br><br>
+    ✓ Latest innovations in aesthetic medicine<br><br>
+    ✓ Professional consultation and support<br><br>
+    ✓ Competitive pricing without compromising quality<br><br>
+    ✓ Fast and reliable delivery across Albania<br><br>
+    ✓ Commitment to safety and efficacy
+  </p>
+</section>
+
+<section id="contact-cta" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+  <h2 style="color: white;">Ready to Elevate Your Practice?</h2>
+  <p class="lead" style="color: rgba(255,255,255,0.95);">Contact us today to discover how North Aesthetic can help you deliver exceptional results to your clients.</p>
+  <a href="Products.html" class="premium-cta">
+    Discover Our Products →
+  </a>
+</section>
+
 <footer>
   <div class="footer-container">
     <div class="footer-section">
       <h3>Contact Us</h3>
-      <p><span class="footer-icon">📧</span>Email: <a href="mailto:info@northaesthetic.com">info@northaesthetic.com</a></p>
-      <p><span class="footer-icon">📧</span>Email: <a href="mailto:sales@northaesthetic.com">sales@northaesthetic.com</a></p>
-      <p><span class="footer-icon">📞</span>Phone: <a href="tel:+355 68 233 2220">+355 68 233 2220</a></p>
-      <p><span class="footer-icon">📍</span>Address: Tirana, Albania</p>
+      <p><a href="/cdn-cgi/l/email-protection#2b42454d446b4544595f434a4e585f434e5f424805484446"><span class="__cf_email__" data-cfemail="ff96919990bf91908d8b979e9a8c8b979a8b969cd19c9092">[email&#160;protected]</span></a></p>
+      <p><a href="/cdn-cgi/l/email-protection#5023313c3523103e3f2224383135232438352439337e333f3d"><span class="__cf_email__" data-cfemail="8dfeece1e8fecde3e2fff9e5ece8fef9e5e8f9e4eea3eee2e0">[email&#160;protected]</span></a></p>
+      <p><a href="tel:+355682332220">+355 68 233 2220</a></p>
+      <p>Tirana, Albania</p>
     </div>
+
     <div class="footer-section">
       <h3>Follow Us</h3>
       <div class="social-links">
-        <a href="https://instagram.com" target="_blank" title="Instagram">
+        <a href="https://instagram.com/northaesthetic" target="_blank" aria-label="Instagram">
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
         </a>
-
+        <a href="https://facebook.com/northaesthetic" target="_blank" aria-label="Facebook">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35C.596 0 0 .592 0 1.326v21.348C0 23.406.596 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.144v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.762v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.594 1.324-1.326V1.326C24 .592 23.404 0 22.675 0z"/>
+          </svg>
+        </a>
       </div>
     </div>
+
     <div class="footer-section">
       <h3>Quick Links</h3>
       <p><a href="index.html">Home</a></p>
       <p><a href="Products.html">Products</a></p>
+      <p><a href="Feedback.html">Feedback</a></p>
       <p><a href="About.html">About Us</a></p>
     </div>
   </div>
+
   <div class="footer-bottom">
-    <p>&copy; 2026 North Aesthetic. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> North Aesthetic. All rights reserved.</p>
   </div>
 </footer>
 
-<script>
-    // Hamburger Menu
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Hamburger Menu
+  const ham = document.getElementById('hamburger');
+  const linksContainer = document.getElementById('navLinks');
+  const nav = document.getElementById('mainNav');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('active');
+    linksContainer.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) {
+      ham.classList.remove('active');
+      linksContainer.classList.remove('active');
+    }
+  });
+
+  linksContainer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      ham.classList.remove('active');
+      linksContainer.classList.remove('active');
     });
+  });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
+  // Navbar scroll behavior
+  let lastScroll = 0;
 
-    // Navbar Scroll
-    let lastScroll = 0;
-    const navbar = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
 
-    window.addEventListener('scroll', () => {
-        const current = window.pageYOffset;
-        if (current <= 0) {
-            navbar.classList.remove('hidden');
-            navbar.classList.add('visible');
-        } else if (current > lastScroll && current > 100) {
-            navbar.classList.add('hidden');
-            navbar.classList.remove('visible');
-        } else {
-            navbar.classList.remove('hidden');
-            navbar.classList.add('visible');
-        }
-        lastScroll = current;
-    });
+    if (current <= 40) {
+      nav.classList.remove('hidden');
+      return;
+    }
 
-    // Highlight current page
-    const currentPage = location.pathname.split('/').pop() || 'About.html';
-    document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.href.endsWith(currentPage)) a.style.fontWeight = 'bold';
-    });
+    if (current > lastScroll && current > 140) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
 
-    // Dynamic copyright
-    document.querySelector('.footer-bottom p').innerHTML = '&copy; ' + new Date().getFullYear() + ' North Aesthetic. All rights reserved.';
+    lastScroll = current;
+  });
+
+  // Highlight active link
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(a => {
+const href = a.getAttribute('href');
+if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+a.classList.add('active');
+} else {
+a.classList.remove('active');
+}
+});
+
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>

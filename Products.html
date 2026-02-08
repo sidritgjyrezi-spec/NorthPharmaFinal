@@ -1,772 +1,841 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse our range of innovative products including headphones, smart watches, sunglasses, and more at competitive prices from North Aesthetic.">
-    <meta name="keywords" content="north aesthetic products, online shopping">
-    <title>Products - North Aesthetic</title>
-    <style>
-        /* ========== RESET ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover premium LeVair, ExoVair, Eloquence and advanced biostimulators – professional-grade skin rejuvenation at North Aesthetic.">
+  <meta name="keywords" content="LeVair, ExoVair, Eloquence, skin boosters, biostimulators, aesthetic medicine, Albania">
+  <title>Products - North Aesthetic</title>
 
-        /* ========== BASE STYLES ========== */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
+  <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      body {
+          font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+          line-height: 1.7;
+          color: #1a1a2e;
+          background: linear-gradient(180deg, #f9faff 0%, #eef2ff 100%);
+      }
 
-        /* ========== NAVIGATION ========== */
-        nav {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease-in-out;
-        }
+      nav {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          padding: 1.1rem 2.5rem;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          z-index: 1000;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-        nav.hidden { transform: translateY(-100%); }
-        nav.visible { transform: translateY(0); }
+      nav.hidden { transform: translateY(-110%); }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .nav-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
 
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            position: relative;
-        }
+      .logo {
+          color: white;
+          font-size: 1.7rem;
+          font-weight: 700;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 0.9rem;
+      }
 
-        .logo-img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            position: relative;
-            top: 8px;
-        }
+      .logo-img {
+          width: 72px;
+          height: 72px;
+          object-fit: contain;
+          border-radius: 12px;
+      }
 
-        .nav-links {
-            position: fixed;
-            right: -100%;
-            top: 70px;
-            flex-direction: column;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            width: 100%;
-            padding: 2rem;
-            gap: 1rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: right 0.3s ease;
-            z-index: 999;
-            max-height: calc(100vh - 70px);
-            overflow-y: auto;
-        }
+      .nav-links {
+          display: flex;
+          gap: 2.8rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: opacity 0.3s ease;
-        }
+      .nav-links a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.05rem;
+          font-weight: 500;
+          transition: all 0.25s ease;
+      }
 
-        .nav-links a:hover { opacity: 0.7; }
+      .nav-links a:hover {
+          opacity: 0.88;
+          transform: translateY(-1px);
+      }
 
-        /* ========== HAMBURGER MENU ========== */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
+      .hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+      }
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
+      .hamburger span {
+          width: 28px;
+          height: 3.2px;
+          background: white;
+          border-radius: 2px;
+          transition: all 0.35s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
 
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+      .hamburger.active span:nth-child(2) { opacity: 0; transform: scale(0.6); }
+      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
 
-        /* ========== MAIN CONTENT ========== */
-        .container {
-            max-width: 1200px;
-            margin: 100px auto 50px;
-            padding: 0 2rem;
-        }
+      .container {
+          max-width: 1440px;
+          margin: 110px auto 100px;
+          padding: 0 2.5rem;
+      }
 
-        h1 {
-            text-align: center;
-            color: #667eea;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
+      h1 {
+          text-align: center;
+          font-size: clamp(2.8rem, 6.5vw, 4.5rem);
+          font-weight: 800;
+          background: linear-gradient(90deg, #667eea, #a78bfa, #c084fc);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 1.5rem;
+          letter-spacing: -1px;
+          position: relative;
+          opacity: 0;
+          transform: translateY(30px);
+          animation: titleFade 1.2s forwards 0.3s;
+      }
 
-        /* ========== PRODUCTS GRID ========== */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+      @keyframes titleFade { to { opacity:1; transform:translateY(0); } }
 
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
+      .products-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+          gap: 2.8rem 2.2rem;
+      }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
+      .product-card {
+          background: rgba(255, 255, 255, 0.92);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+          transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+          opacity: 0;
+          transform: translateY(60px) scale(0.96);
+      }
 
-        .product-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background: #f0f0f0;
-        }
+      .product-card.visible {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+      }
 
-        .product-info { padding: 1.5rem; }
+      .product-card:hover {
+          transform: translateY(-16px) scale(1.018);
+          box-shadow: 0 28px 70px rgba(102,126,234,0.24);
+      }
 
-        .product-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
+      .product-image-wrapper {
+          height: 380px;
+          overflow: hidden;
+          position: relative;
+          background: linear-gradient(135deg, #f0f4ff 0%, #e5e7ff 100%);
+      }
 
-        .product-description {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
+      .product-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
 
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .product-card:hover .product-image {
+          transform: scale(1.12);
+      }
 
-        .product-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-        }
+      .overlay-gradient {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, rgba(102,126,234,0.35), transparent 60%);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+      }
 
-        .add-to-cart-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: opacity 0.3s ease;
-        }
+      .product-card:hover .overlay-gradient { opacity: 1; }
 
-        .add-to-cart-btn:hover { opacity: 0.9; }
+      .coming-soon {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: linear-gradient(135deg, #ec4899, #f43f5e);
+          color: white;
+          padding: 0.6rem 1.3rem;
+          border-radius: 50px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          box-shadow: 0 6px 16px rgba(244,63,94,0.35);
+          z-index: 2;
+          transform: translateY(-10px);
+          opacity: 0;
+          transition: all 0.5s ease;
+      }
 
-        /* ========== ORDER MODAL ========== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            overflow-y: auto;
-        }
+      .product-card:hover .coming-soon {
+          transform: translateY(0);
+          opacity: 1;
+      }
 
-        .modal.show {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      .product-info {
+          padding: 2rem 1.8rem;
+      }
 
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            margin: 2rem auto;
-        }
+      .product-name {
+          font-size: 1.38rem;
+          font-weight: 700;
+          color: #111827;
+          margin-bottom: 0.8rem;
+          line-height: 1.3;
+      }
 
-        .close-modal {
-            position: absolute;
-            right: 1.5rem;
-            top: 1rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #666;
-        }
+      .product-description {
+          color: #4b5563;
+          font-size: 0.98rem;
+          line-height: 1.6;
+          margin-bottom: 1.6rem;
+      }
 
-        .close-modal:hover { color: #333; }
+      .product-footer {
+          display: flex;
+          justify-content: center;
+          margin-top: 1rem;
+      }
 
-        .modal-content h2 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
-        }
+      .view-details {
+          background: linear-gradient(135deg, #667eea, #7c3aed);
+          color: white;
+          border: none;
+          padding: 0.9rem 2.2rem;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.35s ease;
+          box-shadow: 0 8px 24px rgba(102,126,234,0.3);
+      }
 
-        .order-summary {
-            background: #f5f5f5;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
+      .view-details:hover {
+          transform: translateY(-3px) scale(1.05);
+          box-shadow: 0 16px 40px rgba(102,126,234,0.4);
+      }
 
-        .order-summary h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
+      .modal {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.72);
+          z-index: 2000;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          overflow-y: auto;
+          opacity: 0;
+          transition: opacity 0.4s ease;
+      }
 
-        .order-summary p {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
+      .modal.show {
+          display: flex;
+          opacity: 1;
+      }
 
-        .order-summary .total {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #667eea;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 2px solid #ddd;
-        }
+      .modal-content {
+          background: white;
+          border-radius: 16px;
+          max-width: 680px;
+          width: 100%;
+          max-height: 90vh;
+          overflow-y: auto;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+          position: relative;
+          transform: scale(0.78) translateY(40px);
+          opacity: 0;
+          transition: all 0.48s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
 
-        .order-form .form-group { margin-bottom: 1.5rem; }
+      .modal.show .modal-content {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+      }
 
-        .order-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
+      .modal-close {
+          position: absolute;
+          top: 16px;
+          right: 20px;
+          font-size: 2.2rem;
+          color: #666;
+          cursor: pointer;
+          line-height: 1;
+      }
 
-        .order-form input,
-        .order-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
+      .modal-close:hover { color: #111; }
 
-        .order-form input:focus,
-        .order-form textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+      .modal-header {
+          padding: 1.8rem 2.2rem 0;
+      }
 
-        .place-order-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            width: 100%;
-            transition: opacity 0.3s ease;
-        }
+      .modal-title {
+          font-size: 1.65rem;
+          color: #1e40af;
+          margin-bottom: 1rem;
+      }
 
-        .place-order-btn:hover { opacity: 0.9; }
-        .place-order-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+      .modal-body {
+          padding: 0 2.2rem 2.2rem;
+          line-height: 1.65;
+          color: #374151;
+      }
 
-        /* ========== FOOTER ========== */
-        footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem 2rem 1.5rem;
-            margin-top: 4rem;
-        }
+      footer {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 5rem 5% 2rem;
+      }
 
-        .footer-container {
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 0 auto 2rem;
-        }
+      .footer-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 3rem;
+      }
 
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
+      .footer-section h3 {
+          font-size: 1.4rem;
+          margin-bottom: 1.2rem;
+          font-family: 'Playfair Display', serif;
+      }
 
-        .footer-section p {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
+      .footer-section p {
+          margin-bottom: 0.8rem;
+      }
 
-        .footer-section a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
+      .footer-section a {
+          color: white;
+          text-decoration: none;
+          opacity: 0.9;
+          transition: opacity 0.3s;
+      }
 
-        .footer-section a:hover { opacity: 0.7; }
-        .footer-icon { margin-right: 0.5rem; }
+      .footer-section a:hover {
+          opacity: 1;
+          text-decoration: underline;
+      }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+      .social-links {
+          display: flex;
+          gap: 1rem;
+          margin-top: 1rem;
+      }
 
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: background 0.3s ease;
-        }
+      .social-links a {
+          width: 45px;
+          height: 45px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s;
+      }
 
-        .social-links a:hover { background: rgba(255, 255, 255, 0.3); }
+      .social-links a:hover {
+          background: rgba(255, 255, 255, 0.35);
+          transform: translateY(-3px);
+      }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.9rem;
-        }
+      .footer-bottom {
+          text-align: center;
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          font-size: 0.95rem;
+          opacity: 0.9;
+      }
 
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
+      @media (max-width: 768px) {
+          .hamburger { display: flex; }
+          .nav-links {
+              position: fixed;
+              inset: 80px 0 0;
+              width: 100%;
+              height: calc(100vh - 80px);
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              transform: translateX(-100%);
+              transition: transform 0.45s ease;
+              gap: 3rem;
+          }
+          .nav-links.active { transform: translateX(0); }
+          .products-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+          .product-image-wrapper { height: 320px; }
+          .modal-content { margin: 1rem; }
+      }
 
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                width: 100%;
-                padding: 2rem;
-                gap: 1rem;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-                transition: right 0.3s ease;
-            }
 
-            .nav-links.active { right: 0; }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 1rem;
-            }
-
-            h1 { font-size: 2rem; }
-            .product-image { height: 200px; }
-            .footer-container { grid-template-columns: 1fr; gap: 1.5rem; }
-            .modal-content { width: 95%; padding: 1.5rem; }
-        }
-    </style>
+  </style>
 </head>
 <body>
-<!-- Navigation -->
-<nav>
-    <div class="nav-container">
-        <a href="index.html" class="logo">
-            <img src="Aesthetic.jpg" alt="North Aesthetic Logo" class="logo-img" loading="lazy" width="70" height="70">
-            <span>North Aesthetic</span>
-        </a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="Products.html">Products</a></li>
-            <li><a href="Feedback.html">Feedback</a></li>
-            <li><a href="About.html">About Us</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+
+<nav class="visible">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="Aesthetic.jpg" alt="North Aesthetic Logo" class="logo-img" loading="lazy">
+      <span>North Aesthetic</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="About.html">About Us</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
     </div>
+  </div>
 </nav>
 
-<!-- Main Content -->
 <div class="container">
-    <h1>Our Products</h1>
+  <h1>Our Premium Collection</h1>
 
-    <div class="products-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-            <img src="LeVair%20135%20composition.png" alt="LeVair" class="product-image" loading="lazy" width="1080" height="1350">
-            <div class="product-info">
-                <h3 class="product-name">LeVair 135 The Ultimate Hydration Skin Booster</h3>
-                <p class="product-description">Hidraton lëkurën me 50 mg H-HA, rrit prodhimin e kolagjenit me 50 mg L-HA dhe rigjeneron lëkurën me Glicerinë, acid suksinik dhe kështu me radhë.</p>
-                <div class="product-footer">
-                </div>
-            </div>
+  <div class="products-grid">
+
+      <!-- 1 -->
+      <div class="product-card" data-product="levair-135">
+      <div class="product-image-wrapper">
+        <img src="LeVair%20135%20composition.png" alt="LeVair 135" class="product-image" loading="lazy">
+        <div class="overlay-gradient"></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">LeVair 135 The Ultimate Hydration Skin Booster</h3>
+        <p class="product-description">Hidraton lëkurën me 50 mg H-HA, rrit prodhimin e kolagjenit me 50 mg L-HA dhe rigjeneron lëkurën me Glicerinë, acid suksinik dhe kështu me radhë.</p>
+        <div class="product-footer">
+          <button class="view-details">View Details</button>
         </div>
+      </div>
+      </div>
 
-        <!-- Product 2 -->
-        <div class="product-card">
-            <img src="levair%20eye.png" alt="Exovair" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">LeVair The Eye Revive PN Booster</h3>
-                <p class="product-description">Xheli indikohet për trajtim në dermën sipërfaqësore. Ky aplikim rrit shkëlqimin e zonës së syve, zvogëlon rrathët e errët dhe përmirëson pamjen e rrudhave rreth syve me Polinukleotide, Peptide Botulinike dhe Niacinamidë.</p>
-                <div class="product-footer">
-                </div>
-            </div>
+      <!-- 2 -->
+      <div class="product-card" data-product="levair-eye">
+        <div class="product-image-wrapper">
+          <img src="levair%20eye.png" alt="LeVair Eye Revive" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
         </div>
-
-        <!-- Product 3 -->
-        <div class="product-card">
-            <img src="LeVair%20firming.png" alt="LeVair_Radical" class="product-image" loading="lazy" width="812" height="617">
-            <div class="product-info">
-                <h3 class="product-name">LeVair PDRN True Repair with PN</h3>
-                <p class="product-description">Synon shtresat e mesme deri në të thella të dermës, duke mundësuar përmirësim efektiv të rigjenerimit të lëkurës duke përdorur një përmbajtje të lartë të PDRN dhe kompleksit PN.</p>
-                <div class="product-footer">
-                </div>
-            </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair The Eye Revive PN Booster</h3>
+          <p class="product-description">Xheli indikohet për trajtim në dermën sipërfaqësore. Ky aplikim rrit shkëlqimin e zonës së syve, zvogëlon rrathët e errët dhe përmirëson pamjen e rrudhave rreth syve me Polinukleotide, Peptide Botulinike dhe Niacinamidë.</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair The Eye Revive PN Booster" data-desc="Xheli indikohet për trajtim në dermën sipërfaqësore. Ky aplikim rrit shkëlqimin e zonës së syve, zvogëlon rrathët e errët dhe përmirëson pamjen e rrudhave rreth syve me Polinukleotide, Peptide Botulinike dhe Niacinamidë.">View Details</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Product 4 -->
-        <div class="product-card">
-            <img src="PllE.png" alt="Lvoir_Surum" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">LeVair PLLA Rich</h3>
-                <p class="product-description">Është një përforcues i lëkurës që kombinon 25 mg PLLA me HA, Glutation dhe peptide për volumizim afatgjatë dhe forcim të strukturës së lëkurës.</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+      <!-- 3 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="LeVair%20firming.png" alt="LeVair PDRN" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
         </div>
-
-        <!-- Product 5 -->
-        <div class="product-card">
-            <img src="77.webp" alt="Eloquence Bashk" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">LeVair Even Better Radical Brightening Triple Booster</h3>
-                <p class="product-description">I cili përmban Glutation, Vitaminë C dhe Niacinamidë, synon të ndriçojë në mënyrë radikale dhe të ushqejë lëkurën.
-                </p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair PDRN True Repair with PN</h3>
+          <p class="product-description">Synon shtresat e mesme deri në të thella të dermës, duke mundësuar përmirësim efektiv të rigjenerimit të lëkurës duke përdorur një përmbajtje të lartë të PDRN dhe kompleksit PN.</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair PDRN True Repair with PN" data-desc="Synon shtresat e mesme deri në të thella të dermës, duke mundësuar përmirësim efektiv të rigjenerimit të lëkurës duke përdorur një përmbajtje të lartë të PDRN dhe kompleksit PN.">View Details</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Product 6 -->
-        <div class="product-card">
-            <img src="Super%20nmn2.webp" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">LeVair Super NMN</h3>
-                <p class="product-description">Është një solucion revitalizues i fuqizuar nga NMN (50 mg), acid suksinik, peptide të ngjashme me botulinumin, gjashtë faktorë rritjeje dhe Kompleksi i Vitaminës B për të përmirësuar metabolizmin e lëkurës dhe për të reduktuar rrudhat dinamike.</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+      <!-- 4 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="PllE.png" alt="LeVair PLLA Rich" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
         </div>
-
-        <!-- Product 7 -->
-        <div class="product-card">
-            <img src="caha.webp" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">LeVair CaHA Biostimulator</h3>
-                <p class="product-description">Kombinon 450 mg hidroksiapatit kalciumi, 38 mg glicerinë dhe aminoacide për të ofruar volumizim të menjëhershëm, hidratim të thellë dhe stimulim afatgjatë të kolagjenit për lëkurë më të fortë dhe më rrezatuese.</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair PLLA Rich</h3>
+          <p class="product-description">Është një përforcues i lëkurës që kombinon 25 mg PLLA me HA, Glutation dhe peptide për volumizim afatgjatë dhe forcim të strukturës së lëkurës.</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair PLLA Rich" data-desc="Është një përforcues i lëkurës që kombinon 25 mg PLLA me HA, Glutation dhe peptide për volumizim afatgjatë dhe forcim të strukturës së lëkurës.">View Details</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Product 8 -->
-        <div class="product-card">
-            <img src="36.webp" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">LeVair Rich Ultimate The Big Five Biostimulators COMING SOON</h3>
-                <p class="product-description">LeVair Rich Ultimate është një koncept krejtësisht i ri i një përforcuesi bio-stimulues të lëkurës, që kombinon pesë biostimulatorë të njohur, PLLA, CaHA, Dual HA, Kolagjen Tipi III dhe PN, në një flakon të vetëm. Me biostimulim të dyfishtë prej 75 mg CaHA dhe 75 mg PLLA, LeVair Rich Ultimate ofron forcim të menjëhershëm të lëkurës dhe hidratim të thellë, ndërkohë që stimulon rimodelim afatgjatë të kolagjenit për volumizim natyral dhe përmirësim të përgjithshëm të cilësisë së lëkurës.</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+      <!-- 5 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="77.webp" alt="LeVair Even Better" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
         </div>
-
-        <!-- Product 9 -->
-        <div class="product-card">
-            <img src="LeVair%20VolumePLLA%20Skin%20Booster%20for%20Volumization.png" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">LeVair VolumePLLA Skin Booster for Volumization COMING SOON</h3>
-                <p class="product-description">Duke prezantuar gjeneratën e re të përforcuesit të lëkurës PLLA - LeVair Volume për fytyrë dhe trup. I disponueshëm në dozime prej 200 mg ose 350 mg PLLA, i kombinuar me 80 mg ose 150 mg HA (H-HA+L-HA). LeVair PLLA Skin Booster është një përforcues i lëkurës biokompatibil i pari në botë që përdor PLLA të konfirmuar nga FDA së bashku me HA për të rikthyer volum natyral. LeVair PLLA Skin Booster Volume sjell më të mirën nga të dy botët e dy përforcuesve më të famshëm të lëkurës të të gjitha kohërave, Sculptra dhe Profhilo, duke përmbajtur PLLA dhe kompleksin e H-HA dhe L-HA.</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair Even Better Radical Brightening Triple Booster</h3>
+          <p class="product-description">I cili përmban Glutation, Vitaminë C dhe Niacinamidë, synon të ndriçojë në mënyrë radikale dhe të ushqejë lëkurën.</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair Even Better Radical Brightening Triple Booster" data-desc="I cili përmban Glutation, Vitaminë C dhe Niacinamidë, synon të ndriçojë në mënyrë radikale dhe të ushqejë lëkurën.">View Details</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Product 10 -->
-        <div class="product-card">
-            <img src="87.webp" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">Eloquence Fine 1.1mL</h3>
-                <p class="product-description">Eloquence Fine për zona të ndjeshme si nën sytë.Prezantohet Eloquence, një mbushës dermal gjenerate e ardhshme i zhvilluar me Teknologjinë ZEEP - duke siguruar nivele ultra-të ulëta endotoksine (<0.1 EU/mL) dhe një proces pastrimi pa BDDE për siguri të përmirësuar dhe minimizim të efekteve anësore. Eloquence është një mbushës dermal i avancuar i zhvilluar me Teknologjinë ZEEP (Zero Endotoxin & BDDE Entire Process), duke siguruar një nivel ultra-të ulët endotoksine <0.1 EU/mL dhe pa BDDE të mbetur të dukshëm - duke reduktuar ndjeshëm rrezikun e efekteve anësore pas trajtimit. Përmes Procesit të tij unik Downing, Eloquence arrin madhësi uniforme të grimcave, duke mundësuar aplikim më të lëmuar dhe më të saktë pa aglomerim të grimcave. Me një Shkallë Modifikimi (MoD) 1/6 më të ulët se mbushësit mono-tip konvencionalë, ofron profil superior sigurie duke ruajtur efikasitet të lartë të lidhjes së kryqëzuar. I vërtetuar klinikisht nga vlerësimet bazuar në WSRS dhe i certifikuar me Markën CE Evropiane, Eloquence ofron përmirësim të besueshëm të rrudhave dhe rezultate me pamje natyrale. I disponueshëm në tre formulime të synuara</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+      <!-- 6 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="Super%20nmn2.webp" alt="LeVair Super NMN" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
         </div>
-
-        <!-- Product 11 -->
-        <div class="product-card">
-            <img src="Eloquence%20Deep%201.1mL.png" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">Eloquence Deep 1.1mL</h3>
-                <p class="product-description">Eloquence Deep për zona të përgjithshme si faqet dhe buzët.Prezantohet Eloquence, një mbushës dermal gjenerate e ardhshme i zhvilluar me Teknologjinë ZEEP - duke siguruar nivele ultra-të ulëta endotoksine (<0.1 EU/mL) dhe një proces pastrimi pa BDDE për siguri të përmirësuar dhe minimizim të efekteve anësore. Eloquence është një mbushës dermal i avancuar i zhvilluar me Teknologjinë ZEEP (Zero Endotoxin & BDDE Entire Process), duke siguruar një nivel ultra-të ulët endotoksine <0.1 EU/mL dhe pa BDDE të mbetur të dukshëm - duke reduktuar ndjeshëm rrezikun e efekteve anësore pas trajtimit. Përmes Procesit të tij unik Downing, Eloquence arrin madhësi uniforme të grimcave, duke mundësuar aplikim më të lëmuar dhe më të saktë pa aglomerim të grimcave. Me një Shkallë Modifikimi (MoD) 1/6 më të ulët se mbushësit mono-tip konvencionalë, ofron profil superior sigurie duke ruajtur efikasitet të lartë të lidhjes së kryqëzuar. I vërtetuar klinikisht nga vlerësimet bazuar në WSRS dhe i certifikuar me Markën CE Evropiane, Eloquence ofron përmirësim të besueshëm të rrudhave dhe rezultate me pamje natyrale. I disponueshëm në tre formulime të synuara</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair Super NMN</h3>
+          <p class="product-description">Është një solucion revitalizues i fuqizuar nga NMN (50 mg), acid suksinik, peptide të ngjashme me botulinumin, gjashtë faktorë rritjeje dhe Kompleksi i Vitaminës B për të përmirësuar metabolizmin e lëkurës dhe për të reduktuar rrudhat dinamike.</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair Super NMN" data-desc="Është një solucion revitalizues i fuqizuar nga NMN (50 mg), acid suksinik, peptide të ngjashme me botulinumin, gjashtë faktorë rritjeje dhe Kompleksi i Vitaminës B për të përmirësuar metabolizmin e lëkurës dhe për të reduktuar rrudhat dinamike.">View Details</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Product 12 -->
-        <div class="product-card">
-            <img src="88.webp" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">Eloquence Sub-Q 1.1mL</h3>
-                <p class="product-description">Eloquence Sub-Q për përmirësime strukturore më të thella si mjekra dhe hunda.Prezantohet Eloquence, një mbushës dermal gjenerate e ardhshme i zhvilluar me Teknologjinë ZEEP - duke siguruar nivele ultra-të ulëta endotoksine (<0.1 EU/mL) dhe një proces pastrimi pa BDDE për siguri të përmirësuar dhe minimizim të efekteve anësore. Eloquence është një mbushës dermal i avancuar i zhvilluar me Teknologjinë ZEEP (Zero Endotoxin & BDDE Entire Process), duke siguruar një nivel ultra-të ulët endotoksine <0.1 EU/mL dhe pa BDDE të mbetur të dukshëm - duke reduktuar ndjeshëm rrezikun e efekteve anësore pas trajtimit. Përmes Procesit të tij unik Downing, Eloquence arrin madhësi uniforme të grimcave, duke mundësuar aplikim më të lëmuar dhe më të saktë pa aglomerim të grimcave. Me një Shkallë Modifikimi (MoD) 1/6 më të ulët se mbushësit mono-tip konvencionalë, ofron profil superior sigurie duke ruajtur efikasitet të lartë të lidhjes së kryqëzuar. I vërtetuar klinikisht nga vlerësimet bazuar në WSRS dhe i certifikuar me Markën CE Evropiane, Eloquence ofron përmirësim të besueshëm të rrudhave dhe rezultate me pamje natyrale. I disponueshëm në tre formulime të synuara</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+      <!-- 7 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="caha.webp" alt="LeVair CaHA" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
         </div>
-
-        <!-- Product 13 -->
-        <div class="product-card">
-            <img src="ExoVair%20Skin%20Booster%20Exosome%20&%20Sodium%20DNA%20+%20Multi-Growth%20Factors.webp" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">ExoVair Skin BoosterExosome & Sodium DNA + Multi-Growth Factors</h3>
-                <p class="product-description">Exovair Skin Booster, një terapi e avancuar rigjenerimi të lëkurës e formulua me kujdes për të rikthyer shkëlqimin, elasticitetin dhe hidratimin nga brenda. I fuqizuar me 16 miliardë ekzosome CICA/Ginseng Korean me pastërti të lartë dhe 60,000 ppm Alaskan PDRN të autorizuar nga FDA & EMA, Exovair Skin Booster vepron në nivel qelizor për të riparuar dhe rigjeneruar indin e lëkurës. I pasuruar me 5 faktorë kryesorë rritjeje, atelokolagjen, acid hialuronik dhe 7 aminoacide thelbësore, ky përzierje e fuqishme stimulon aktivitetin e fibroblasteve, rrit sintezën e kolagjenit dhe elastinës dhe hidraton thellësisht lëkurën. Rezultati është përmirësim i strukturës së lëkurës, forcim i shtuar dhe pamje rinore dhe e ndritshme. Pavarësisht nëse synon rrudha të holla, humbje elasticiteti ose tonalitet të pabarabartë, Exovair Skin Booster ofron rigjenerim transformues të lëkurës me kohë minimale rikuperimi. Çdo kuti vjen në një set 4-kutish brenda, duke përfshirë 2 flakonë (100 mg / 6 mL), duke siguruar performancë profesionale dhe rezultate të qëndrueshme.</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair CaHA Biostimulator</h3>
+          <p class="product-description">Kombinon 450 mg hidroksiapatit kalciumi, 38 mg glicerinë dhe aminoacide për të ofruar volumizim të menjëhershëm, hidratim të thellë dhe stimulim afatgjatë të kolagjenit për lëkurë më të fortë dhe më rrezatuese.</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair CaHA Biostimulator" data-desc="Kombinon 450 mg hidroksiapatit kalciumi, 38 mg glicerinë dhe aminoacide për të ofruar volumizim të menjëhershëm, hidratim të thellë dhe stimulim afatgjatë të kolagjenit për lëkurë më të fortë dhe më rrezatuese.">View Details</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Product 14 -->
-        <div class="product-card">
-            <img src="ExoVair%20H%20Scalp%20Booster%20Exosome%20&%20Sodium%20DNA%20+%20Scalp%20&%20Hair%20Growth%20Factor.webp" alt="Notebook Set" class="product-image" loading="lazy" width="600" height="400">
-            <div class="product-info">
-                <h3 class="product-name">ExoVair H Scalp Booster Exosome & Sodium DNA + Scalp & Hair Growth Factor</h3>
-                <p class="product-description">Përjetoni fuqinë e Exovair H, një solucion gjithëpërfshirës për rigjenerimin e skalpit. I pasuruar me ekzosome, PDRN dhe faktorë rritjeje të skalpit, Exovair H ushqen thellë skalpin dhe flokët, duke promovuar forcë, hidratim dhe vitalitet. Exovair H ofron rigjenerim të avancuar të skalpit duke adresuar shkaqet rrënjësore të humbjes së flokëve dhe duke promovuar shëndetin e përgjithshëm të skalpit. Formula e tij me depërtim të thellë eksfolion papastërtitë dhe qelizat e vdekura të lëkurës, ndërsa ushqen skalpin me përbërës të butë dhe natyralë si Centella Asiatica (CICA), Ginseng, Proteinë Thërrmuesh dhe Papain. Ekzosomet e CICA-s dhe Ginseng stimulojnë në mënyrë efikase fibroblastet, duke rezultuar në rritje të prodhimit të kolagjenit dhe elastinës, dhe aktivizojnë qelizat burimore të folikulit për të prodhuar fibra flokësh të forta dhe për të promovuar rritjen e flokëve.</p>
-                <div class="product-footer">
-
-                </div>
-            </div>
+      <!-- 8 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="36.webp" alt="LeVair Rich Ultimate" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
+          <span class="coming-soon">COMING SOON</span>
         </div>
-    </div>
-
-    <!-- Order Modal -->
-    <div class="modal" id="orderModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Complete Your Order</h2>
-            <div id="orderSummary" class="order-summary"></div>
-
-            <div class="order-form">
-                <div class="form-group">
-                    <label for="customerName">Full Name *</label>
-                    <input type="text" id="customerName" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="customerEmail">Email Address *</label>
-                    <input type="email" id="customerEmail" placeholder="Enter your email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="customerPhone">Phone Number *</label>
-                    <input type="tel" id="customerPhone" placeholder="Enter your phone number" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="shippingAddress">Shipping Address *</label>
-                    <textarea id="shippingAddress" placeholder="Enter your full address" rows="3" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="orderNotes">Order Notes (Optional)</label>
-                    <textarea id="orderNotes" placeholder="Any special instructions?" rows="2"></textarea>
-                </div>
-
-                <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
-            </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair Rich Ultimate The Big Five Biostimulators</h3>
+          <p class="product-description">LeVair Rich Ultimate është një koncept krejtësisht i ri i një përforcuesi bio-stimulues të lëkurës, që kombinon pesë biostimulatorë të njohur, PLLA, CaHA, Dual HA, Kolagjen Tipi III dhe PN, në një flakon të vetëm...</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair Rich Ultimate The Big Five Biostimulators" data-desc="LeVair Rich Ultimate është një koncept krejtësisht i ri i një përforcuesi bio-stimulues të lëkurës, që kombinon pesë biostimulatorë të njohur, PLLA, CaHA, Dual HA, Kolagjen Tipi III dhe PN, në një flakon të vetëm. Me biostimulim të dyfishtë prej 75 mg CaHA dhe 75 mg PLLA, LeVair Rich Ultimate ofron forcim të menjëhershëm të lëkurës dhe hidratim të thellë, ndërkohë që stimulon rimodelim afatgjatë të kolagjenit për volumizim natyral dhe përmirësim të përgjithshëm të cilësisë së lëkurës.">View Details</button>
+          </div>
         </div>
-    </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="LeVair%20VolumePLLA%20Skin%20Booster%20for%20Volumization.png" alt="LeVair VolumePLLA" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
+          <span class="coming-soon">COMING SOON</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">LeVair VolumePLLA Skin Booster for Volumization</h3>
+          <p class="product-description">Duke prezantuar gjeneratën e re të përforcuesit të lëkurës PLLA - LeVair Volume për fytyrë dhe trup. I disponueshëm në dozime prej 200 mg ose 350 mg PLLA, i kombinuar me 80 mg ose 150 mg HA (H-HA+L-HA)...</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="LeVair VolumePLLA Skin Booster for Volumization" data-desc="Duke prezantuar gjeneratën e re të përforcuesit të lëkurës PLLA - LeVair Volume për fytyrë dhe trup. I disponueshëm në dozime prej 200 mg ose 350 mg PLLA, i kombinuar me 80 mg ose 150 mg HA (H-HA+L-HA). LeVair PLLA Skin Booster është një përforcues i lëkurës biokompatibil i pari në botë që përdor PLLA të konfirmuar nga FDA së bashku me HA për të rikthyer volum natyral.">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="87.webp" alt="Eloquence Fine" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Eloquence Fine 1.1mL</h3>
+          <p class="product-description">Eloquence Fine për zona të ndjeshme si nën sytë. Përdor Teknologjinë ZEEP – ultra të ulëta endotoksine dhe pa BDDE...</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="Eloquence Fine 1.1mL" data-desc="Eloquence Fine për zona të ndjeshme si nën sytë.Prezantohet Eloquence, një mbushës dermal gjenerate e ardhshme i zhvilluar me Teknologjinë ZEEP - duke siguruar nivele ultra-të ulëta endotoksine (<0.1 EU/mL) dhe një proces pastrimi pa BDDE për siguri të përmirësuar dhe minimizim të efekteve anësore...">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="Eloquence%20Deep%201.1mL.png" alt="Eloquence Deep" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Eloquence Deep 1.1mL</h3>
+          <p class="product-description">Eloquence Deep për zona të përgjithshme si faqet dhe buzët. Teknologjia ZEEP – siguri e lartë dhe rezultate natyrale...</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="Eloquence Deep 1.1mL" data-desc="Eloquence Deep për zona të përgjithshme si faqet dhe buzët.Prezantohet Eloquence, një mbushës dermal gjenerate e ardhshme i zhvilluar me Teknologjinë ZEEP - duke siguruar nivele ultra-të ulëta endotoksine (<0.1 EU/mL) dhe një proces pastrimi pa BDDE...">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="88.webp" alt="Eloquence Sub-Q" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Eloquence Sub-Q 1.1mL</h3>
+          <p class="product-description">Eloquence Sub-Q për përmirësime strukturore më të thella si mjekra dhe hunda. Me Teknologjinë ZEEP për siguri maksimale...</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="Eloquence Sub-Q 1.1mL" data-desc="Eloquence Sub-Q për përmirësime strukturore më të thella si mjekra dhe hunda.Prezantohet Eloquence, një mbushës dermal gjenerate e ardhshme i zhvilluar me Teknologjinë ZEEP...">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="ExoVair%20Skin%20Booster%20Exosome%20&%20Sodium%20DNA%20+%20Multi-Growth%20Factors.webp" alt="ExoVair Skin Booster" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">ExoVair Skin Booster Exosome & Sodium DNA + Multi-Growth Factors</h3>
+          <p class="product-description">I fuqizuar me 16 miliardë ekzosome CICA/Ginseng Korean dhe 60,000 ppm Alaskan PDRN – rigjenerim i thellë qelizor...</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="ExoVair Skin Booster" data-desc="Exovair Skin Booster, një terapi e avancuar rigjenerimi të lëkurës e formulua me kujdes për të rikthyer shkëlqimin, elasticitetin dhe hidratimin nga brenda. I fuqizuar me 16 miliardë ekzosome CICA/Ginseng Korean me pastërti të lartë dhe 60,000 ppm Alaskan PDRN...">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="ExoVair%20H%20Scalp%20Booster%20Exosome%20&%20Sodium%20DNA%20+%20Scalp%20&%20Hair%20Growth%20Factor.webp" alt="ExoVair H Scalp" class="product-image" loading="lazy">
+          <div class="overlay-gradient"></div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">ExoVair H Scalp Booster Exosome & Sodium DNA + Scalp & Hair Growth Factor</h3>
+          <p class="product-description">Solucion i plotë për rigjenerimin e skalpit dhe forcimin e flokëve – me ekzosome, PDRN dhe faktorë rritjeje...</p>
+          <div class="product-footer">
+            <button class="view-details" data-title="ExoVair H Scalp Booster" data-desc="Përjetoni fuqinë e Exovair H, një solucion gjithëpërfshirës për rigjenerimin e skalpit. I pasuruar me ekzosome, PDRN dhe faktorë rritjeje të skalpit, Exovair H ushqen thellë skalpin dhe flokët...">View Details</button>
+          </div>
+        </div>
+      </div>
+
+  </div>
 </div>
 
-<!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3>Contact Us</h3>
-            <p><span class="footer-icon">📧</span>Email: <a href="mailto:info@northaesthetic.com">info@northaesthetic.com</a></p>
-            <p><span class="footer-icon">📧</span>Email: <a href="mailto:sales@northaesthetic.com">sales@northaesthetic.com</a></p>
-            <p><span class="footer-icon">📞</span>Phone: <a href="tel:+355 68 233 2220">+355 68 233 2220</a></p>
-            <p><span class="footer-icon">📍</span>Address: Tirana, Albania</p>
-        </div>
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <div class="social-links">
-                <a href="https://instagram.com" target="_blank" title="Instagram">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <span class="modal-close" id="closeModal">×</span>
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTitle"></h2>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
 
-            </div>
-        </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <p><a href="index.html">Home</a></p>
-            <p><a href="Products.html">Products</a></p>
-            <p><a href="About.html">About Us</a></p>
-        </div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p><a href="mailto:info@northaesthetic.com">info@northaesthetic.com</a></p>
+      <p><a href="tel:+355682332220">+355 68 233 2220</a></p>
+      <p>Tirana, Albania</p>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 North Aesthetic. All rights reserved.</p>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://instagram.com/northaesthetic" target="_blank" aria-label="Instagram">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://facebook.com/northaesthetic" target="_blank" aria-label="Facebook">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35C.596 0 0 .592 0 1.326v21.348C0 23.406.596 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.144v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.762v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.594 1.324-1.326V1.326C24 .592 23.404 0 22.675 0z"/>
+          </svg>
+        </a>
+      </div>
     </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="Products.html">Products</a></p>
+      <p><a href="Feedback.html">Feedback</a></p>
+      <p><a href="About.html">About Us</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> North Aesthetic. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
-    let selectedProduct = null;
+  // ────────────────────────────────────────────────────────────────
+  //   PRODUCTS PAGE – FULL SCRIPT WITH FIXED MODAL & ANIMATIONS
+  // ────────────────────────────────────────────────────────────────
 
-    // Hamburger Menu
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+  const productDescriptions = {
+    "levair-135": `Hidraton lëkurën intensivisht me 50 mg H-HA (acid hialuronik me peshë molekulare të lartë),
+stimulon prodhimin e kolagjenit me 50 mg L-HA (acid hialuronik me peshë të ulët molekulare),
+dhe rigjeneron lëkurën në nivel qelizor falë glicerinës, acidit suksinik, aminoacideve dhe antioksidantëve të fuqishëm.
+Formulimi i avancuar lejon hidratim të thellë, përmirësim të elasticitetit dhe reduktim të shenjave të lodhjes dhe plakjes së parakohshme.`,
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+    "levair-eye": `Xheli i lehtë indikohet posaçërisht për zonën delikate rreth syve.
+Përmban Polinukleotide (PN), Peptide me efekt botulinik-like dhe Niacinamidë të lartë.
+Efektet kryesore: zvogëlon rrathët e errët, redukton linjat e imta dhe rrudhat e imta,
+rrit shkëlqimin dhe hidratimin e zonës periokulare, përmirëson qarkullimin dhe redukton ënjtjen.`,
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
-    });
+    "levair-pdrn": `Synon shtresat e mesme deri në të thella të dermës duke mundësuar rigjenerim efektiv dhe të shpejtë të lëkurës.
+Përmban një përqendrim të lartë PDRN (polideoksiribonukleotid) dhe kompleks PN që nxisin riparimin qelizor,
+përmirësojnë elasticitetin, reduktojnë inflamacionin dhe ndihmojnë në rikthimin e strukturës së lëkurës të dëmtuar.`,
 
-    // Add to Cart
-    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const card = this.closest('.product-card');
-            selectedProduct = {
-                name: card.querySelector('.product-name').textContent,
-                price: card.querySelector('.product-price').textContent,
-                description: card.querySelector('.product-description').textContent
-            };
-            showOrderModal();
-        });
-    });
+    "levair-caha": `Kombinon 450 mg hidroksiapatit kalciumi (CaHA), 38 mg glicerinë dhe aminoacide esenciale.
+Ofron volumizim të menjëhershëm, hidratim të thellë dhe stimulim afatgjatë të kolagjenit dhe elastinës.
+Rezultati: lëkurë më e fortë, më e tendosur, me teksturë të përmirësuar dhe shkëlqim natyral.`,
 
-    function showOrderModal() {
-        document.getElementById('orderSummary').innerHTML = `
-                <h3>Order Summary</h3>
-                <p><strong>Product:</strong> ${selectedProduct.name}</p>
-                <p><strong>Description:</strong> ${selectedProduct.description}</p>
-                <p class="total"><strong>Total:</strong> ${selectedProduct.price}</p>
-            `;
-        document.getElementById('orderModal').classList.add('show');
+    "levair-rich-ultimate": `Koncept revolucionar – pesë biostimulatorë të fuqishëm në një flakon të vetëm:
+75 mg CaHA + 75 mg PLLA + Dual HA + Kolagjen Tipi III + PN.
+Ofron forcim të menjëhershëm, hidratim intensiv dhe rimodelim afatgjatë të kolagjenit.
+Ideale për pacientë që kërkojnë trajtim “të plotë” anti-aging me një procedurë të vetme.`,
+
+    "levair-volumeplla": `Gjenerata e re e PLLA-së së kombinuar me HA.
+Disponohet në dy variante: 200 mg PLLA + 80 mg HA ose 350 mg PLLA + 150 mg HA.
+Biokompatibilitet i lartë, stimulim i fortë i kolagjenit tip I, rikthim volum natyral në fytyrë dhe trup,
+me rezultate që zgjasin 18–24 muaj.`,
+
+    "eloquence-fine": `Eloquence Fine 1.1 mL – i krijuar posaçërisht për zona të ndjeshme (nën sy, buzë të holla, linja të imta).
+Teknologjia ZEEP: ultra-low endotoksina (<0.1 EU/mL) dhe proces pa BDDE.
+Rezultate të buta, natyrale dhe shumë të sigurta me rrezik minimal të noduleve ose reaksioneve.`,
+
+    "eloquence-deep": `Eloquence Deep 1.1 mL – për faqe, buzë, rrudha nasolabiale dhe zona që kërkojnë volum mesatar.
+Teknologjia ZEEP siguron pastërti të lartë dhe integrim të shkëlqyer në inde.
+Ofron rezultate të dukshme por shumë natyrale me qëndrueshmëri 9–14 muaj.`,
+
+    "eloquence-subq": `Eloquence Sub-Q 1.1 mL – për përmirësime strukturore të thella (mjekër, nofullë, hundë, tempuj).
+Ofron liftim dhe definicion të fortë me siguri maksimale falë teknologjisë ZEEP.`,
+
+    "exovair-skin": `ExoVair Skin Booster – 16 miliardë ekzosome vegjetale (CICA + Ginseng Korean) + 60,000 ppm Alaskan PDRN + multi-growth factors.
+Rigjenerim i thellë qelizor, përmirësim i cilësisë së lëkurës, reduktim i poreve, njollave dhe shenjave të plakjes.
+Efekt “glass skin” me shkëlqim dhe uniformitet të lartë.`,
+
+    "exovair-h-scalp": `ExoVair H Scalp Booster – zgjidhje e plotë për rigjenerimin e skalpit dhe forcimin e flokëve.
+Përmban ekzosome, PDRN Alaskan, faktorë rritjeje specifike për flokët, peptide biomimetike dhe kompleks ushqyes.
+Nxit rritjen e flokëve, redukton rënien, përmirëson trashësinë dhe densitetin e flokëve.`
+  };
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav') && !e.target.closest('.hamburger')) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
     }
+  });
 
-    document.querySelector('.close-modal').addEventListener('click', () => {
-        document.getElementById('orderModal').classList.remove('show');
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
     });
+  });
 
-    window.addEventListener('click', (e) => {
-        const modal = document.getElementById('orderModal');
-        if (e.target === modal) modal.classList.remove('show');
-    });
+  let lastScroll = 0;
+  const nav = document.querySelector('nav');
 
-    function placeOrder() {
-        const name = document.getElementById('customerName').value;
-        const email = document.getElementById('customerEmail').value;
-        const phone = document.getElementById('customerPhone').value;
-        const address = document.getElementById('shippingAddress').value;
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    if (cur <= 0) {
+      nav.classList.remove('hidden');
+      return;
+    }
+    if (cur > lastScroll && cur > 120) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
+    lastScroll = cur;
+  });
 
-        if (!name || !email || !phone || !address) {
-            alert('Please fill in all required fields.');
-            return;
-        }
+  const currentPage = location.pathname.split('/').pop() || 'Products.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === currentPage) {
+      a.style.fontWeight = '700';
+      a.style.opacity = '1';
+    }
+  });
 
-        const btn = document.querySelector('.place-order-btn');
-        btn.disabled = true;
-        btn.textContent = 'Processing Order...';
+  document.getElementById('year').textContent = new Date().getFullYear();
 
+  const cards = document.querySelectorAll('.product-card');
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, idx) => {
+      if (entry.isIntersecting) {
         setTimeout(() => {
-            alert('Order placed successfully!');
-            document.getElementById('orderModal').classList.remove('show');
-            ['customerName', 'customerEmail', 'customerPhone', 'shippingAddress', 'orderNotes']
-                .forEach(id => document.getElementById(id).value = '');
-            btn.disabled = false;
-            btn.textContent = 'Place Order';
-        }, 1000);
+          entry.target.classList.add('visible');
+        }, idx * 90);
+      }
+    });
+  }, { threshold: 0.18 });
+
+  cards.forEach(card => cardObserver.observe(card));
+
+  const modal = document.getElementById('productModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  document.querySelectorAll('.view-details').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.product-card');
+      const key = card?.dataset?.product;
+
+      if (key && productDescriptions[key]) {
+        modalTitle.textContent = card.querySelector('.product-name')?.textContent || 'Produkt';
+        modalBody.innerHTML = productDescriptions[key].replace(/\n/g, '<br><br>');
+      } else {
+        modalTitle.textContent = 'Informacion';
+        modalBody.textContent = 'Përshkrimi i plotë nuk është i disponueshëm ende.';
+      }
+
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModalFunc() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  closeModalBtn.addEventListener('click', closeModalFunc);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeModalFunc();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      closeModalFunc();
     }
-
-    // Navbar Scroll
-    let lastScroll = 0;
-    const navbar = document.querySelector('nav');
-
-    window.addEventListener('scroll', () => {
-        const current = window.pageYOffset;
-        if (current <= 0) {
-            navbar.classList.remove('hidden');
-            navbar.classList.add('visible');
-        } else if (current > lastScroll && current > 100) {
-            navbar.classList.add('hidden');
-            navbar.classList.remove('visible');
-        } else {
-            navbar.classList.remove('hidden');
-            navbar.classList.add('visible');
-        }
-        lastScroll = current;
-    });
-
-    // Highlight current page
-    const currentPage = location.pathname.split('/').pop() || 'Products.html';
-    document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.href.endsWith(currentPage)) a.style.fontWeight = 'bold';
-    });
-
-    // Dynamic copyright
-    document.querySelector('.footer-bottom p').innerHTML = '&copy; ' + new Date().getFullYear() + ' North Aesthetic. All rights reserved.';
+  });
 </script>
 </body>
 </html>
